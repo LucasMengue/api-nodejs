@@ -1,0 +1,23 @@
+{
+  "name": "api-nodejs",
+  "version": "1.0.0",
+  "description": "Exemplo de API criada com Nodejs nas aulas do projeto newDev() - Traco.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasMengue/api-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasMengue/api-nodejs/issues"
+  },
+  "homepage": "https://github.com/LucasMengue/api-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}
