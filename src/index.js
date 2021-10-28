@@ -39,6 +39,23 @@ app.post("/api/customers", (request, response) => {
   response.send(customers);
 });
 
+app.put("/api/customers/:id", (request, response) => {
+  const { id } = request.params;
+  const { body } = request;
+
+  const index = customers.findIndex((customers) => customers.id == id);
+  customers[index] = body;
+
+  response.send(customers);
+});
+
+app.delete("/api/customers/:id", (request, response) => {
+  const { id } = request.params;
+  const newArray = customers.filter((customers) => customers.id != id);
+
+  response.send(newArray);
+});
+
 // criando servidor na porta 8000
 app.listen(8000, () => {
   console.log("Servidor funcionando na porta 8000...");
