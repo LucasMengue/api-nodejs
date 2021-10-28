@@ -21,6 +21,24 @@ app.get("/api/ping", (request, response) => {
   });
 });
 
+// criando rota GET e mostrando as informações dos customers
+app.get("/api/customers", (request, response) => {
+  // mostrando o array de customers
+  response.send(customers);
+});
+
+// criando rota POST para adicionar novos customers
+app.post("/api/customers", (request, response) => {
+  // constante body guarda as requisições
+  const { body } = request;
+
+  // faz um push no array customers para o body
+  customers.push(body);
+
+  // apresenta os customers
+  response.send(customers);
+});
+
 // criando servidor na porta 8000
 app.listen(8000, () => {
   console.log("Servidor funcionando na porta 8000...");
