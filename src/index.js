@@ -39,20 +39,30 @@ app.post("/api/customers", (request, response) => {
   response.send(customers);
 });
 
+// criando rota PUT para adicionar novos customers
 app.put("/api/customers/:id", (request, response) => {
+  // pegando o parametro id do request e guardando na constante id
   const { id } = request.params;
+  // pegando o request e guardando na constante body
   const { body } = request;
 
+  // usando o método findIndex para encontrar o id do customer e guardando na constante index
   const index = customers.findIndex((customers) => customers.id == id);
   customers[index] = body;
 
+  // mostrando customers
   response.send(customers);
 });
 
+// criando rota DELETE para adicionar novos customers
 app.delete("/api/customers/:id", (request, response) => {
+  // pegando o parametro id do request e guardando na constante id
   const { id } = request.params;
+
+  // usando o método filter para encontrar o id do customer e guardando na constante newArray
   const newArray = customers.filter((customers) => customers.id != id);
 
+  // mostrando newArray
   response.send(newArray);
 });
 
